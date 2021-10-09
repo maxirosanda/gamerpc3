@@ -1,10 +1,10 @@
 import React from 'react'
-import { View,StyleSheet} from 'react-native'
+import { View,StyleSheet,Image} from 'react-native'
 
-const Rectangulo = ()=>{
+const Rectangulo = ({url})=>{
     
     return(
-        <View style={styles.rectangulo}></View>
+        <Image style={styles.rectangulo} source={{uri:url}}></Image>
 
     )
 }

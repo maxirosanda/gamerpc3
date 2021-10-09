@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator()
 
 const OrdersNavigator = () => (
 
-    <Stack.Navigator >
+    <Stack.Navigator  screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }}>
         <Stack.Screen name="OrdersUser" component={OrdersUser} options={{title: "Ordenes" ,headerShown:false}}  />
        <Stack.Screen name="OrderUser" component={OrderUser} options={{title: "Orden"}}  />
     </Stack.Navigator>  

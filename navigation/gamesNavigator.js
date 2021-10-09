@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator()
 
 const GamesNavigator = () => (
 
-    <Stack.Navigator>
+    <Stack.Navigator  screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }}>
        <Stack.Screen name="Games" component={Game} options={{title: "Seleccion por juegos"}}  />
     </Stack.Navigator>
 

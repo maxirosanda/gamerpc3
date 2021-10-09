@@ -7,7 +7,7 @@ import Inicio from '../screens/user/inicio';
 const Stack = createNativeStackNavigator();
 
 const AuthNavigator = () => (
-  <Stack.Navigator initialRouteName="Inicio">
+  <Stack.Navigator initialRouteName="Inicio"  screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }}>
     <Stack.Screen name="Inicio" options={{ headerShown: false }} component={Inicio} />
     <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Register" component={RegisterScreen} />

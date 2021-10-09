@@ -1,7 +1,7 @@
 import React from 'react'
 import { View,Text,StyleSheet,TextInput,FlatList,TouchableOpacity} from 'react-native'
 import ButtonLong from '../../components/buttonLong'
-
+import { COLORS } from '../../constants/colors';
 
 const Inicio = ({ navigation, route })=>{
     
@@ -14,7 +14,7 @@ const Inicio = ({ navigation, route })=>{
     return(
         <View style={styles.conteiner}>
           
-          <ButtonLong text={"Inicio Sesión"} handleSelected={handleSelectedLogin}></ButtonLong>
+          <ButtonLong text={"Inicio Sesión"} handleSelected={handleSelectedLogin} color={COLORS.accent}></ButtonLong>
           <ButtonLong text={"Registrarme"} handleSelected={handleSelectedRegister}></ButtonLong>
   
     </View>

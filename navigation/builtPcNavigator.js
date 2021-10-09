@@ -7,7 +7,7 @@ import BuildPc  from '../screens/principales/buildpc';
 const Stack = createNativeStackNavigator();
 const BuildPcNavigator = () => (
 
-    <Stack.Navigator>
+    <Stack.Navigator  screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }}>
         <Stack.Screen name="BuildPc" component={BuildPc} options={{title: "Armar Pc Manualmente"}} />
     </Stack.Navigator>
 

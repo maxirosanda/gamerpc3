@@ -1,12 +1,12 @@
 import React from 'react'
-import { View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import { View,Text,StyleSheet,TouchableOpacity,Image} from 'react-native'
 
 const Circle = ({item})=>{
     
     return(
         <View>
             <TouchableOpacity > 
-                <View style={styles.circle}></View>
+                <Image style={styles.circle} source={{uri:item.url}}></Image>
                 <Text style={styles.text}>{item.title}</Text>
             </TouchableOpacity>
         </View>

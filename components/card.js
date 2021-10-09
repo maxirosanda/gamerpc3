@@ -7,7 +7,7 @@ const Card = ({item})=>{
     return(
         <>
         <TouchableOpacity style={styles.card}>
-            <Rectangulo/>
+            <Rectangulo url={item.url}/>
             <Text style={styles.titulo}>{item.title}</Text>
             <Text style={styles.mas}>+</Text> 
         </TouchableOpacity>

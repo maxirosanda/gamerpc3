@@ -6,12 +6,14 @@ import { getProducts, selectedProduct } from '../../store/actions/products.actio
 import Cuadrado from '../../components/cuadrado';
 import { AntDesign } from '@expo/vector-icons'; 
 import Rectangulo from '../../components/rectangulo'
-
+import { COLORS } from '../../constants/colors';
 const CrearPc = ({ navigation, route })=>{
 
   const dispatch = useDispatch();
   const products = useSelector(state => state.products.list)
-
+  let imgProgramas = true
+  let imgGame = false
+  
   useEffect(()=>{
       dispatch(getProducts())
   },[])
@@ -38,10 +40,10 @@ const CrearPc = ({ navigation, route })=>{
     return(
         <View style={styles.conteiner}>
             <View style={styles.fila}>
-              <Cuadrado handleSelected ={handleSelectedPrograms} />
-              <Cuadrado handleSelected ={handleSelectedGame} />
+              <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} />
+              <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} />
             </View>
-            <ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc}></ButtonLong>
+            <ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong>
             <View style={styles.titulorecomendadas}>
                  <Text style={styles.textrecomendadas}>Recomendadas</Text>
             </View>
@@ -49,7 +51,7 @@ const CrearPc = ({ navigation, route })=>{
                  data={products}
                  renderItem={(data) => (
                    <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
-                     <Rectangulo/>
+                     <Rectangulo url={data.item.url}/>
                      <View>
                      <Text style={styles.textrecomendada}>{data.item.title}</Text>
                      <Text style={styles.textrecomendada}>{data.item.price}</Text>
@@ -93,7 +95,6 @@ titulorecomendadas:{
 textrecomendadas:{
     fontSize:20,
     textAlignVertical:"center",
-    fontFamily:"ZCOOL",
 },
 textrecomendada:{
   flexDirection:"column",

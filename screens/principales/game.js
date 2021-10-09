@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getGames } from '../../store/actions/games.actions';
 import ButtonLong from '../../components/buttonLong';
 import Search from '../../components/search';
+import {COLORS} from '../../constants/colors'
 
 const Game = ({ navigation, route })=>{
     
@@ -22,7 +23,7 @@ const Game = ({ navigation, route })=>{
             <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
                 < Circle item={data.item} />  
             )}/> 
-             <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}}></ButtonLong>
+             <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}} color={COLORS.primary}></ButtonLong>
        
     </View>
     )

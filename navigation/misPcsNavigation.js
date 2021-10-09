@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator()
 
 const MisPcsNavigator = () => (
 
-    <Stack.Navigator >
+    <Stack.Navigator  screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }} >
         <Stack.Screen name="Mispcs" component={MisPcs} options={{title: "Mis pcs" ,headerShown:false}}  />
         <Stack.Screen name="Detalle" component={Detalle} options={{title: "Detalles" }}  />
         <Stack.Screen name="New Pc" component={NewMiPc} options={{title: "Detalles" }}  />

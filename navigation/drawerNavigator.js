@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
 
     return (
-      <Drawer.Navigator initialRouteName="Home" >
+      <Drawer.Navigator initialRouteName="Home" screenOptions={{headerStyle: {backgroundColor:'#000000'},headerTintColor:'#ffffff' }}  >
         <Drawer.Screen name="Home" component={CrearPc} />
         <Drawer.Screen name="Compras" component={ OrdersNavigator} />
         <Drawer.Screen name="Mi Pc" component={MisPcsNavigator} />

@@ -5,6 +5,7 @@ import { useSelector,useDispatch} from 'react-redux';
 import { getOrderUser } from '../../store/actions/orders.action';
 import ButtonLong from '../../components/buttonLong';
 import { deleteOrder } from '../../store/actions/orders.action';
+import { COLORS } from '../../constants/colors';
 
 const OrderUser = ({navigation})=>{
     const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const OrderUser = ({navigation})=>{
 
     return(
         <View style={styles.conteiner}>
-       <ButtonLong text={"Eliminar Orden"} handleSelected={()=> handleDeleteOrder(orderid)}/>      
+       <ButtonLong text={"Eliminar Orden"} handleSelected={()=> handleDeleteOrder(orderid)} color={COLORS.primary}/>      
        <FlatList
 
             data={order[0].item.components}

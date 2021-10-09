@@ -5,6 +5,7 @@ import ButtonLong from '../../components/buttonLong';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPrograms } from '../../store/actions/programs.actions';
 import Search from '../../components/search';
+import { COLORS } from '../../constants/colors';
 
 const Programs = ({ navigation, route })=>{
     
@@ -20,7 +21,7 @@ const Programs = ({ navigation, route })=>{
             <FlatList style={styles.circles}  numColumns={3}  data={programs} keyExtractor={item => item.id} renderItem={(data) => (
                 < Circle item={data.item} />  
             )}/> 
-            <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}}></ButtonLong>
+            <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}} color={COLORS.primary}></ButtonLong>
        
     </View>
     )

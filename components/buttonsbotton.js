@@ -3,7 +3,7 @@ import { View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 import { useDispatch} from 'react-redux';
 import { confirOrder } from '../store/actions/orders.action';
 import ButtonLong from './buttonLong';
-
+import { COLORS } from '../constants/colors';
 const ButtonsBotton = ({product,userId})=>{
 
     const dispatch = useDispatch();
@@ -14,9 +14,8 @@ const ButtonsBotton = ({product,userId})=>{
       
     return(
         <View>
-                <ButtonLong text={"COMPRAR"} handleSelected={handlerAddItemOrder}></ButtonLong>  
+                <ButtonLong text={"COMPRAR"} handleSelected={handlerAddItemOrder} color={COLORS.primary} ></ButtonLong>  
          
-                <ButtonLong text={"VOLVER A LA HOME"} handleSelected={()=>{}}></ButtonLong>
         </View>
     )
 }
