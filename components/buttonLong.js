@@ -13,7 +13,7 @@ const ButtonLong = ({text,handleSelected,color})=>{
 const styles= StyleSheet.create({
     contendorBotonLargo:{
         width:"90%",
-        margin:10,
+        margin:"5%",
         height:50,
         borderRadius:5
     },

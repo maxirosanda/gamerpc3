@@ -29,6 +29,8 @@ const DatosVendedor = ({ navigation, route })=>{
 
 const styles= StyleSheet.create({
     conteiner:{
+        width:"100%",
+        height:"100%"
         },
        photo:{
         flexGrow:1,

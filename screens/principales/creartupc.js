@@ -43,7 +43,7 @@ const CrearPc = ({ navigation, route })=>{
               <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} />
               <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} />
             </View>
-            <ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong>
+           <View style={styles.containerButton}><ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong></View>
             <View style={styles.titulorecomendadas}>
                  <Text style={styles.textrecomendadas}>Recomendadas</Text>
             </View>
@@ -71,7 +71,8 @@ const CrearPc = ({ navigation, route })=>{
 const styles= StyleSheet.create({
 conteiner:{
 width:"100%",
-height:"100%"
+height:"100%",
+justifyContent:"center"
 },
 
 cuadrado:{
@@ -84,6 +85,10 @@ cuadrado:{
 },
 fila:{
     flexDirection:"row",
+    justifyContent:"center"
+},
+containerButton:{
+ justifyContent:"center"
 },
 titulorecomendadas:{
     height:30,

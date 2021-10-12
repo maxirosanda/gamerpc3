@@ -15,7 +15,7 @@ const Inicio = ({ navigation, route })=>{
         <View style={styles.conteiner}>
           
           <ButtonLong text={"Inicio Sesión"} handleSelected={handleSelectedLogin} color={COLORS.accent}></ButtonLong>
-          <ButtonLong text={"Registrarme"} handleSelected={handleSelectedRegister}></ButtonLong>
+          <ButtonLong text={"Registrarme"} handleSelected={handleSelectedRegister} color={COLORS.accent}></ButtonLong>
   
     </View>
     )

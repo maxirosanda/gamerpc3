@@ -17,7 +17,9 @@ const Card = ({item})=>{
 
 const styles= StyleSheet.create({
     titulo:{
-        fontWeight:"bold"
+        fontWeight:"bold",
+        width:"40%",
+        textAlign:"center"
     },
     card:{
         height:120,

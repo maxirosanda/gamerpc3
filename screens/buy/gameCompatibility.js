@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View,Text,StyleSheet, TouchableOpacity,FlatList} from 'react-native'
-import CardBig from '../../components/cardBig';
-import ButtonLong from '../../components/buttonLong';
-import { useSelector} from 'react-redux';
+import Circle from '../../components/circle'
+import { useSelector, useDispatch } from 'react-redux';
+import { getGames } from '../../store/actions/games.actions';
 import ButtonsBotton from '../../components/buttonsbotton';
+import Search from '../../components/search';
+import {COLORS} from '../../constants/colors'
 
 const GameCompatibility = ({ navigation, route })=>{
+    const dispatch =useDispatch()
     const products = useSelector(state => state.products.list)
     const selectedId = useSelector(state =>state.products.selectedId)
     const product = products.find(item => item.id === selectedId);
     const userId = useSelector(state => state.auth.userId);
-   
+    const games = useSelector(state => state.games.list)
+
+    useEffect(()=>{
+        dispatch(getGames())
+    },[])
+
     return(
         <View style={styles.conteiner}>
+            <Search text="    Buscar"/>
+                    <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
+                        < Circle item={data.item} />  
+                    )}/> 
 
-            
-<ButtonsBotton product={product} userId={userId} ></ButtonsBotton>
-    </View>
+                <ButtonsBotton product={product} userId={userId} ></ButtonsBotton>
+        </View>
     )
 }
 
@@ -25,36 +36,22 @@ const styles= StyleSheet.create({
         width:"100%",
         height:"100%"
         },
-        bar:{
-            flexDirection:"row",
-            backgroundColor:"#FB6D01",
-            
-        },
-        barButton:{
-            width:"33.3%",
-            padding:15,
-            flexGrow:1
-        },
-        bartext:{
-            textAlign:"center",
-            color:"#ffffff"
-        },
-        active:{
-            width:"33.3%",
-            padding:15,
-            flexGrow:1,
-            borderBottomWidth:5,
-            borderColor:"#ffffff"
-        },
-        activetext:{
-            textAlign:"center",
-            color:"#ffffff",
-            fontWeight:"bold"
-        },
-        cardbig:{
-            flexGrow:1,
-
-        }
+    circles:{
+    height:100,
+    },
+    contendorBotonLargo:{
+        margin:10,
+        backgroundColor:"#000000",
+        height:50,
+        borderRadius:5
+    },
+    textBotonLargo:{
+        fontSize:16,
+        textAlign:"center",
+        color:"#ffffff",
+        textAlignVertical:"center",
+        height:50,
+    },
 })
 
 export default GameCompatibility
