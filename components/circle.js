@@ -7,6 +7,7 @@ const Circle = ({item})=>{
         <View>
             <TouchableOpacity > 
                 <Image style={styles.circle} source={{uri:item.url}}></Image>
+                <Image style={styles.circle2} source={require("../assets/images/tilde-01.png")}></Image>
                 <Text style={styles.text}>{item.title}</Text>
             </TouchableOpacity>
         </View>
@@ -14,8 +15,9 @@ const Circle = ({item})=>{
 }
 
 const styles= StyleSheet.create({
-    circle:{
-        backgroundColor:"#FB6D01",
+    circle2:{
+        backgroundColor:"#36D20C",
+        opacity:0.8,
         flexGrow:1,
         flexDirection:"row",
         width:100,
@@ -24,7 +26,19 @@ const styles= StyleSheet.create({
         margin:8,
         borderRadius:50,
         alignContent:"center",
+        position: 'absolute'
         },
+        circle:{
+            backgroundColor:"#FB6D01",
+            flexGrow:1,
+            flexDirection:"row",
+            width:100,
+            maxWidth:100,
+            height:100,
+            margin:8,
+            borderRadius:50,
+            alignContent:"center"
+            },
         text:{
             textAlign:"center",
             textAlignVertical:"center",

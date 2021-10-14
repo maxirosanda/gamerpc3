@@ -1,12 +1,12 @@
 import React from 'react'
-import { View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import { View,Text,StyleSheet,TouchableOpacity,Image} from 'react-native'
 
 const Avatar2 = ({title,alias})=>{
     
     return(
-        <View   >
+        <View>
             <TouchableOpacity style={styles.conteiner}> 
-                <View style={styles.avatar}></View>
+                <Image style={styles.avatar} source={require("../assets/images/user.png")}></Image>
                 <View style={styles.conteinertext}>
                 <Text style={styles.text}>{title}</Text>
                 <Text >{alias}</Text>
