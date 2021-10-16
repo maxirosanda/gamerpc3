@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View,Text,StyleSheet, TouchableOpacity,FlatList} from 'react-native'
-import Circle from '../../components/circle'
+import Circlesintilde from '../../components/circlesintilde'
 import { useSelector, useDispatch } from 'react-redux';
 import { getGames } from '../../store/actions/games.actions';
 import ButtonsBotton from '../../components/buttonsbotton';
@@ -23,7 +23,7 @@ const GameCompatibility = ({ navigation, route })=>{
         <View style={styles.conteiner}>
             <Search text="    Buscar"/>
                     <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
-                        < Circle item={data.item} />  
+                        < Circlesintilde item={data.item} />  
                     )}/> 
 
                 <ButtonsBotton product={product} userId={userId} ></ButtonsBotton>

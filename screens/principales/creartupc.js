@@ -40,8 +40,8 @@ const CrearPc = ({ navigation, route })=>{
     return(
         <View style={styles.conteiner}>
             <View style={styles.fila}>
-              <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} />
-              <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} />
+              <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} text={"PCs en base a tus Programas"} />
+              <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} text={"PCs en base a tus juegos"} />
             </View>
            <View style={styles.containerButton}><ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong></View>
             <View style={styles.titulorecomendadas}>

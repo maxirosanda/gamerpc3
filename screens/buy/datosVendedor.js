@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,Text,StyleSheet, TouchableOpacity,FlatList,Image} from 'react-native'
+import { View,Text,StyleSheet, TouchableOpacity,FlatList,Image,ScrollView} from 'react-native'
 import { useSelector} from 'react-redux';
 import ButtonsBotton from '../../components/buttonsbotton';
 import Avatar2 from '../../components/avatar';
@@ -14,16 +14,23 @@ const DatosVendedor = ({ navigation, route })=>{
 /* <ButtonLong text={"CHAT CON EL VENDEDOR"} handleSelected={()=>{}}></ButtonLong> */
     return(
         <View style={styles.conteiner}>
-             <Image style={styles.photo} source={require('../../assets/images/imgVendedor.jpg')}></Image>
+        
+        <ScrollView style={[styles.conteinerVendedor,styles.blurredView]}>
+       
+             <Image style={styles.photo}  source={require('../../assets/images/imgVendedor.jpg')}></Image>
              <Avatar2 title = "Mariano Herrera" alias='mariano_computer' />
              <View style={styles.conteinerText}>
              <Text>Direccion: Brandsen 3435 Ramos Mejia</Text>
              <Text>Tel: 4354-4356</Text>
+             <Text>Mail:mariano_computer@hotmail.om</Text>
              <Text>Horarios: 8:30 hs a 17 hs de lunes a viernes </Text>
-             </View>
-        <ButtonsBotton product={product} userId={userId} ></ButtonsBotton>
-        
+             <Text>Puntuacion:80</Text>
         </View>
+        
+        </ScrollView>
+        
+         <ButtonsBotton product={product}  userId={userId} ></ButtonsBotton>
+         </View>
     )
 }
 
@@ -32,6 +39,13 @@ const styles= StyleSheet.create({
         width:"100%",
         height:"100%"
         },
+        absolute: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+          },
        photo:{
         flexGrow:1,
         height:180,
