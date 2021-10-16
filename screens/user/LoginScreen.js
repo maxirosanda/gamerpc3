@@ -85,8 +85,6 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   conteiner:{
-    width:"100%",
-    height:"100%", 
     backgroundColor:"#FB6D01"
     },
 });

@@ -13,13 +13,19 @@ const ButtonsBotton = ({product,userId})=>{
       }
       
     return(
-        <View>
+        <View style={styles.ButtonLong}>
                 <ButtonLong text={"COMPRAR"} handleSelected={handlerAddItemOrder} color={COLORS.primary} ></ButtonLong>  
          
         </View>
     )
 }
 
+const styles= StyleSheet.create({
+    ButtonLong:{
+        elevation:2,
+        backgroundColor:"#ffffff"
+    }
+})
 
 
 export default ButtonsBotton

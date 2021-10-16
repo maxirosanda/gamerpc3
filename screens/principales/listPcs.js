@@ -1,19 +1,15 @@
 import React,{useEffect} from 'react'
 import { View,Text,StyleSheet,TouchableOpacity,FlatList } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux';
-import ButtonLong from '../../components/buttonLong';
 import { getProducts, selectedProduct } from '../../store/actions/products.actions';
-import Cuadrado from '../../components/cuadrado';
 import { AntDesign } from '@expo/vector-icons'; 
 import Rectangulo from '../../components/rectangulo'
 import { COLORS } from '../../constants/colors';
-const CrearPc = ({ navigation, route })=>{
+const ListPcs = ({ navigation, route })=>{
 
   const dispatch = useDispatch();
   const products = useSelector(state => state.products.list)
-  let imgProgramas = true
-  let imgGame = false
-  
+
   useEffect(()=>{
       dispatch(getProducts())
   },[])
@@ -22,31 +18,12 @@ const CrearPc = ({ navigation, route })=>{
 
         navigation.navigate('RecommendedHome', { title:title });
       }
-      const handleSelectedGame = () => {
-        navigation.navigate('GamesHome');
-      }
-      const handleSelectedPrograms = () => {
-        navigation.navigate('ProgramsHome');
-      }
-      const handleSelectedBuildPc = () => {
-        navigation.navigate('BuildPcHome');
-      }
 
     
 
-     
-
-
     return(
         <View style={styles.conteiner}>
-            <View style={styles.fila}>
-              <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} />
-              <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} />
-            </View>
-           <View style={styles.containerButton}><ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong></View>
-            <View style={styles.titulorecomendadas}>
-                 <Text style={styles.textrecomendadas}>Recomendadas</Text>
-            </View>
+    
             <FlatList
                  data={products}
                  renderItem={(data) => (
@@ -102,7 +79,6 @@ textrecomendadas:{
     textAlignVertical:"center",
 },
 textrecomendada:{
-  width:200,
   flexDirection:"column",
   textAlign:"left"
 },
@@ -126,9 +102,9 @@ rectangulo:{
   
 },
 flechaderecha:{
-  marginLeft:10
+  marginLeft:30
 }
 
 })
 
-export default CrearPc
+export default ListPcs

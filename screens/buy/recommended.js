@@ -32,36 +32,6 @@ const styles= StyleSheet.create({
     conteiner:{
         width:"100%",
         height:"100%"
-        },
-        bar:{
-            flexDirection:"row",
-            backgroundColor:"#FB6D01",
-            
-        },
-        barButton:{
-            width:"33.3%",
-            padding:15,
-            flexGrow:1
-        },
-        bartext:{
-            textAlign:"center",
-            color:"#ffffff"
-        },
-        active:{
-            width:"33.3%",
-            padding:15,
-            flexGrow:1,
-            borderBottomWidth:5,
-            borderColor:"#ffffff"
-        },
-        activetext:{
-            textAlign:"center",
-            color:"#ffffff",
-            fontWeight:"bold"
-        },
-        cardbig:{
-            flexGrow:1,
-
         }
 })
 

@@ -8,7 +8,6 @@ import Search from '../../components/search';
 import { COLORS } from '../../constants/colors';
 
 const Programs = ({ navigation, route })=>{
-    
     const programs = useSelector(state => state.programs.list)
     const dispatch =useDispatch()
 
@@ -21,7 +20,7 @@ const Programs = ({ navigation, route })=>{
             <FlatList style={styles.circles}  numColumns={3}  data={programs} keyExtractor={item => item.id} renderItem={(data) => (
                 < Circle item={data.item} />  
             )}/> 
-            <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}} color={COLORS.primary}></ButtonLong>
+            <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{ navigation.navigate('ListPcs')}} color={COLORS.primary}></ButtonLong>
        
     </View>
     )

@@ -10,8 +10,8 @@ import {COLORS} from '../../constants/colors'
 const Game = ({ navigation, route })=>{
     
     const dispatch =useDispatch()
-
     const games = useSelector(state => state.games.list)
+
 
     useEffect(()=>{
         dispatch(getGames())
@@ -23,7 +23,7 @@ const Game = ({ navigation, route })=>{
             <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
                 < Circle item={data.item} />  
             )}/> 
-             <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{}} color={COLORS.primary}></ButtonLong>
+             <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{ navigation.navigate('ListPcs')}} color={COLORS.primary}></ButtonLong>
        
     </View>
     )
