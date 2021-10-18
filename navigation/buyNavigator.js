@@ -8,16 +8,10 @@ import {COLORS} from '../constants/colors'
 const Tab = createMaterialTopTabNavigator()
 const BuyNavigator = () => (
 
-      <Tab.Navigator  tabBarOptions={{
-        activeTintColor: '#fff',
-        inactiveTintColor: 'lightgray',
-        activeBackgroundColor: '#c4461c',
-        inactiveBackgroundColor: '#b55031',
-            style: {
-                  backgroundColor: COLORS.primary,
-                  paddingBottom: 3
-            }
-     }}>
+      <Tab.Navigator  screenOptions={{
+            tabBarActiveTintColor: COLORS.primary,
+            tabBarInactiveTintColor: 'gray',
+            }}>
         <Tab.Screen name="Recomendadas"options={{ title: 'DATOS TECNICOS'}} component={Recommended} />
         <Tab.Screen name="Vendedor" options={{ title: 'DATOS VENDEDOR'}} component={DatosVendedor} />
         <Tab.Screen name="Compatibilidad" options={{ title: 'JUEGOS COMPATIBLES'}} component={GameCompatibility} />

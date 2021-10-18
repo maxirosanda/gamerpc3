@@ -1,10 +1,10 @@
 import React from 'react'
 import { View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 
-const ButtonLong = ({text,handleSelected,color})=>{
+const ButtonLong = ({text,handleSelected,color,buttonVisible})=>{
     
     return(
-        <TouchableOpacity style={[{backgroundColor:color },styles.contendorBotonLargo]} onPress={handleSelected} > 
+        <TouchableOpacity style={[{backgroundColor:color},{ display: buttonVisible ? 'none' : 'flex'},styles.contendorBotonLargo]} onPress={handleSelected} > 
         <Text style={styles.textBotonLargo}>{text}</Text>
     </TouchableOpacity>
     )

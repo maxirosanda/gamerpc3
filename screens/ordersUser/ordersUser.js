@@ -3,7 +3,7 @@ import { View,Text,StyleSheet, TouchableOpacity,FlatList} from 'react-native'
 import { useSelector ,useDispatch} from 'react-redux';
 import { getOrdersUser } from '../../store/actions/orders.action';
 import { selectedOrder } from '../../store/actions/orders.action';
-
+import Card from '../../components/card'
 const OrdersUser = ({ navigation, route })=>{
     const userId = useSelector(state => state.auth.userId)
     const dispatch = useDispatch();
@@ -27,11 +27,7 @@ const OrdersUser = ({ navigation, route })=>{
              <FlatList
                 data={Object.values(orders)}
                 renderItem={(data) => (
-                <View>
-                    <TouchableOpacity onPress={()=> handleSelectedOrder(data.item._id)}> 
-                        <Text>Compra N: {data.item._id}</Text>
-                    </TouchableOpacity>
-                 </View>
+                <Card item={data.item}></Card>
            )}
                 keyExtractor={order =>order._id}
     />

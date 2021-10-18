@@ -23,7 +23,6 @@ const Recommended = ({ navigation, route })=>{
                     )}
                  keyExtractor={component => component.id}
              />
-       <ButtonsBotton product={product} userId={userId} ></ButtonsBotton>
     </View>
     )
 }

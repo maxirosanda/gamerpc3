@@ -26,7 +26,6 @@ const GameCompatibility = ({ navigation, route })=>{
                         < Circlesintilde item={data.item} />  
                     )}/> 
 
-                <ButtonsBotton product={product} userId={userId} ></ButtonsBotton>
         </View>
     )
 }
