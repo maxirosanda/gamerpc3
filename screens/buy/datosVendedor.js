@@ -66,7 +66,7 @@ const styles= StyleSheet.create({
        photo:{
         flexGrow:1,
         height:180,
-        backgroundColor:"#FB6D01",
+        backgroundColor:"#878787",
        },
        text:{
            fontSize:14,

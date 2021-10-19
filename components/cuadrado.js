@@ -27,7 +27,7 @@ const styles= StyleSheet.create({
         height:120,
         margin:20,
         borderRadius:8,
-        backgroundColor:"#FB6D01",
+        backgroundColor:"#878787",
     },
     titulo:{
         width:120,

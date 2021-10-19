@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { View,Text,StyleSheet,TouchableOpacity,FlatList } from 'react-native'
+import { View,Text,StyleSheet,TouchableOpacity,FlatList, ScrollView } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux';
 import ButtonLong from '../../components/buttonLong';
 import { getProducts, selectedProduct } from '../../store/actions/products.actions';
@@ -31,41 +31,68 @@ const CrearPc = ({ navigation, route })=>{
       const handleSelectedBuildPc = () => {
         navigation.navigate('BuildPcHome');
       }
-
-    
-
-     
-
-
-    return(
-        <View style={styles.conteiner}>
-            <View style={styles.fila}>
-              <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} text={"PCs en base a tus Programas"} />
-              <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} text={"PCs en base a tus juegos"} />
-            </View>
-           <View style={styles.containerButton}><ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong></View>
-            <View style={styles.titulorecomendadas}>
-                 <Text style={styles.textrecomendadas}>Recomendadas</Text>
-            </View>
-            <FlatList
-                 data={products}
-                 renderItem={(data) => (
-                   <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
-                     <Rectangulo url={data.item.url}/>
-                     <View>
-                     <Text style={styles.textrecomendada}>{data.item.title}</Text>
-                     <Text style={styles.textrecomendada}>{data.item.price}</Text>
-                     <Text style={styles.textrecomendada}>{data.item.description}</Text>
-                     </View>
-                     <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
-                     </TouchableOpacity> 
-
-                    )}
-                 keyExtractor={item => item.id}
-             />
-
-        </View>
+const lista = () => {
+  if(products.length == 0){
+    return (
+      <ScrollView>
+      <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
+      <Rectangulo />
+      <View>
+      <Text style={styles.textrecomendada}>---------------------</Text>
+      <Text style={styles.textrecomendada}>-------</Text>
+      <Text style={styles.textrecomendada}>----------------------------------------------------</Text>
+      </View>
+      <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
+      </TouchableOpacity> 
+      <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
+      <Rectangulo />
+      <View>
+      <Text style={styles.textrecomendada}>---------------------</Text>
+      <Text style={styles.textrecomendada}>-------</Text>
+      <Text style={styles.textrecomendada}>----------------------------------------------------</Text>
+      </View>
+      <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
+      </TouchableOpacity> 
+       </ScrollView>
     )
+  }else{
+    return (
+      <FlatList
+      data={products}
+      renderItem={(data) => (
+        <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
+          <Rectangulo url={data.item.url}/>
+          <View>
+          <Text style={styles.textrecomendada}>{data.item.title}</Text>
+          <Text style={styles.textrecomendada}>{data.item.price}</Text>
+          <Text style={styles.textrecomendada}>{data.item.description}</Text>
+          </View>
+          <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
+          </TouchableOpacity> 
+
+         )}
+         keyExtractor={item => item.id}
+      />
+
+     ) 
+  }
+
+}
+   
+    return(
+      <View style={styles.conteiner}>
+          <View style={styles.fila}>
+            <Cuadrado handleSelected ={handleSelectedPrograms} imgCuadrado={imgProgramas} text={"PCs en base a tus Programas"} />
+            <Cuadrado handleSelected ={handleSelectedGame} imgCuadrado={imgGame} text={"PCs en base a tus juegos"} />
+          </View>
+         <View style={styles.containerButton}><ButtonLong text={"ARMAR MI PC MANUALMENTE"} handleSelected={handleSelectedBuildPc} color={COLORS.primary}></ButtonLong></View>
+          <View style={styles.titulorecomendadas}>
+               <Text style={styles.textrecomendadas}>Recomendadas</Text>
+          </View>
+          {lista()}
+      </View>
+  )
+    
 }
 
 const styles= StyleSheet.create({

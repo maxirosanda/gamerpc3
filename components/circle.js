@@ -37,7 +37,7 @@ const styles= StyleSheet.create({
         position: 'absolute'
         },
         circle:{
-            backgroundColor:"#36D20C",
+            backgroundColor:"#878787",
             flexGrow:1,
             flexDirection:"row",
             width:100,

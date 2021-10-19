@@ -13,7 +13,7 @@ const styles= StyleSheet.create({
     rectangulo:{
         width:80,
         height:50,
-        backgroundColor:"#FB6D01",
+        backgroundColor:"#878787",
         borderRadius:8,
         marginLeft:8,
         marginRight:18,
