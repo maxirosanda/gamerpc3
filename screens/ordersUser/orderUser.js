@@ -10,41 +10,34 @@ import { COLORS } from '../../constants/colors';
 const OrderUser = ({navigation})=>{
     const dispatch = useDispatch();
     const orderid = useSelector(state => state.orders.selectedId)
-    const order = useSelector(state => state.orders.list)
-  
-    useEffect(()=>{
-        dispatch(getOrderUser(orderid))
-        console.log(order)
-    },[])
-
+    const orders = useSelector(state => state.orders.list)
+    const order = orders.find(item => item._id === orderid);
     
     const handleDeleteOrder = (_id) => {
         dispatch(deleteOrder(_id))
         navigation.navigate('OrdersUser');
       }
 
-    
+      useEffect(()=>{
+        console.log(order)
+    },[])
     
 
 
     return(
-        <View style={styles.conteiner}>
-       <ButtonLong text={"Eliminar Orden"} handleSelected={()=> handleDeleteOrder(orderid)} color={COLORS.primary}/>      
+        <View style={styles.conteiner}>    
        <FlatList
 
-            data={order[0].item.components}
-            renderItem={(data) =>{
-    
-        return (
+            data={order.item.components}
+            renderItem={(data) =>(
             <View>
-            <CardBig component={data}/>
+            <CardBig component={data.item}/>
             </View>
-            ) 
-        } }
-        keyExtractor={data => data.date}
+             ) }
+        keyExtractor={order =>order.id}
 
         />  
-
+<ButtonLong text={"Eliminar Orden"} handleSelected={()=> handleDeleteOrder(orderid)} color={COLORS.primary}/>  
     </View>
     )
 }

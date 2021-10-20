@@ -5,7 +5,6 @@ export const GET_ORDERS = 'GET_ORDERS'
 
 export const CONFIRM_ORDER = 'CONFIRM_ORDER'
 export const GET_ORDERSUSER = 'GET_ORDERSUSER'
-export const GET_ORDERUSER = 'GET_ORDER'
 export const DELETE_ORDER = 'DELETE_ORDER'
 
 export const selectedOrder = (_id) => ({
@@ -50,27 +49,9 @@ export const getOrdersUser = (userId) => {
     }
   }
 }
+ 
 
 
-export const getOrderUser = (_id) => {
-  return async dispatch =>{
-    try {
-      const response = await fetch( `${URL_API}/orders/${_id}.json`,{
-        method:"GET",
-        headers:{
-          'Content-Type': 'application/json'
-        }
-      } )
-      const result = await response.json()
-      
-      //const order = Object.keys(result).map(key => ({ ...result[key], _id: key }))
-
-      dispatch({type:GET_ORDERUSER,list:[result]})
-    }catch(error){
-      console.log(error.message)
-    }
-  }
-}
 
 export const confirOrder = (payload, userId) => {
     return async dispatch => {

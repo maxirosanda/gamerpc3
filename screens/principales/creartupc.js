@@ -38,18 +38,18 @@ const lista = () => {
       <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
       <Rectangulo />
       <View>
-      <Text style={styles.textrecomendada}>---------------------</Text>
-      <Text style={styles.textrecomendada}>-------</Text>
-      <Text style={styles.textrecomendada}>----------------------------------------------------</Text>
+      <Text style={styles.textrecomendadaCarga}>                                   </Text>
+      <Text style={styles.textrecomendadaCarga}>        </Text>
+      <Text style={styles.textrecomendadaCarga}>                                                          </Text>
       </View>
       <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
       </TouchableOpacity> 
       <TouchableOpacity onPress={()=>{ handleSelectedProduct(data.item.id,data.item.title)}} style={styles.card}>
       <Rectangulo />
       <View>
-      <Text style={styles.textrecomendada}>---------------------</Text>
-      <Text style={styles.textrecomendada}>-------</Text>
-      <Text style={styles.textrecomendada}>----------------------------------------------------</Text>
+      <Text style={styles.textrecomendadaCarga}>                                   </Text>
+      <Text style={styles.textrecomendadaCarga}>        </Text>
+      <Text style={styles.textrecomendadaCarga}>                                                          </Text>
       </View>
       <AntDesign name="rightcircle" style={styles.flechaderecha} size={24} color="black" />
       </TouchableOpacity> 
@@ -132,6 +132,10 @@ textrecomendada:{
   width:200,
   flexDirection:"column",
   textAlign:"left"
+},
+textrecomendadaCarga:{
+  backgroundColor:"#878787",
+  margin:4,
 },
 card:{
     height:100,

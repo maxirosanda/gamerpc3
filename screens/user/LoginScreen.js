@@ -7,6 +7,7 @@ import { COLORS } from '../../constants/colors';
 import { login } from '../../store/actions/auth.action';
 import Input from '../../components/Input';
 import { formReducer, FORM_INPUT_UPDATE } from './formReducer';
+import ButtonLong from '../../components/buttonLong';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -70,11 +71,8 @@ const LoginScreen = () => {
         minLength={6}
         onInputChange={onInputChangeHandler}
       />
-      <Button
-        title="INGRESAR"
-        onPress={handleLogin}
-        buttonStyle={styles.button}
-      />
+      <ButtonLong text={"Ingresar"} handleSelected={handleLogin} color={COLORS.primary}></ButtonLong>
+
     </AuthScreenWrapper>
   );
 }

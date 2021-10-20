@@ -17,40 +17,14 @@ const Game = ({ navigation, route })=>{
         dispatch(getGames())
     },[])
 
-    const lista = () => {
-        if(games.length == 0){
-          return (
-            <FlatList style={styles.circles} numColumns={3}>
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}}  />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}}  />
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}} />  
-                < Circle item={{url:"jjgg",title:"gkdfjgldsjglajg"}}  />  
-           
-             </FlatList>
-          )
-        }else{
-          return (
-            <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
-                < Circle item={data.item} />  
-            )}/> 
-      
-           ) 
-        }
-      
-      }
-
-
 
 
     return(
         <View style={styles.conteiner}>
        <Search text="    Buscar"/>
-           {lista()}
+       <FlatList style={styles.circles} numColumns={3}  data={games} keyExtractor={item => item.id} renderItem={(data) => (
+                < Circle item={data.item} />  
+            )}/> 
              <ButtonLong text={"Ver Opciones de Computadoras"} handleSelected={()=>{ navigation.navigate('ListPcs')}} color={COLORS.primary}></ButtonLong>
        
     </View>

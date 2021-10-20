@@ -6,10 +6,10 @@ const CardBig = ({component})=>{
     return(
         <TouchableOpacity style={styles.card}>
             <View style={{flexDirection:"row"}}>
-                <Rectangulo url={component.item.url}/>
-                <Text style={styles.titulo}>{component.item.name}</Text>
+                <Rectangulo url={component.url}/>
+                <Text style={styles.titulo}>{component.name}</Text>
             </View>
-             <Text style={styles.description}>{component.item.description}</Text>
+             <Text style={styles.description}>{component.description}</Text>
              <Text style={styles.vermas}>Ver Mas</Text> 
         </TouchableOpacity>
     )

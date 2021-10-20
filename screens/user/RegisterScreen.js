@@ -7,7 +7,7 @@ import { COLORS } from '../../constants/colors';
 import { signup } from '../../store/actions/auth.action';
 import Input from '../../components/Input';
 import { formReducer, FORM_INPUT_UPDATE } from './formReducer';
-
+import ButtonLong from '../../components/buttonLong';
 
 const RegisterScreen = () => {
   const dispatch = useDispatch();
@@ -71,11 +71,8 @@ const RegisterScreen = () => {
         minLength={6}
         onInputChange={onInputChangeHandler}
       />
-      <Button
-        title="REGISTRARME"
-        onPress={handleSignUp}
-        buttonStyle={styles.button}
-      />
+       <ButtonLong text={"Ingresar"} handleSelected={handleSignUp} color={COLORS.primary}></ButtonLong>
+    
     </AuthScreenWrapper>
   );
 }

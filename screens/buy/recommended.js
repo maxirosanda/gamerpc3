@@ -18,7 +18,7 @@ const Recommended = ({ navigation, route })=>{
                  data={product.components}
                  renderItem={(data) => (
                      
-                   <CardBig component={data}/>
+                   <CardBig component={data.item}/>
                   
                     )}
                  keyExtractor={component => component.id}

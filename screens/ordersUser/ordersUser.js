@@ -3,11 +3,13 @@ import { View,Text,StyleSheet, TouchableOpacity,FlatList} from 'react-native'
 import { useSelector ,useDispatch} from 'react-redux';
 import { getOrdersUser } from '../../store/actions/orders.action';
 import { selectedOrder } from '../../store/actions/orders.action';
-import Card from '../../components/card'
+import CardOrders from '../../components/cardOrders';
+
 const OrdersUser = ({ navigation, route })=>{
     const userId = useSelector(state => state.auth.userId)
     const dispatch = useDispatch();
     const orders = useSelector(state => state.orders.list)
+    
     useEffect(()=>{
         dispatch(getOrdersUser(userId))
     },[orders])
@@ -27,7 +29,7 @@ const OrdersUser = ({ navigation, route })=>{
              <FlatList
                 data={Object.values(orders)}
                 renderItem={(data) => (
-                <Card item={data.item}></Card>
+                <CardOrders item={data.item.item} handleSelectedOrder={handleSelectedOrder} _id ={data.item._id}></CardOrders>
            )}
                 keyExtractor={order =>order._id}
     />
